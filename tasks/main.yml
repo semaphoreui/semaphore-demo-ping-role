@@ -1,6 +1,12 @@
 - name: Ping site
-  shell: ping -c 1 -w 2 google.com
+  shell: |
+    if [[ "$(uname)" == "Darwin" ]]; then
+      ping -c 1 -t 2 google.com
+    else
+      ping -c 1 -w 2 google.com
+    fi
   register: ping_result
+
 
 - name: Ping result
   debug:
