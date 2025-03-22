@@ -1,9 +1,9 @@
 - name: Ping site
   shell: |
     if [[ "$(uname)" == "Darwin" ]]; then
-      ping -c 1 -t 2 google.com
+      ping -c 1 -t 2 semaphoreui.com
     else
-      ping -c 1 -w 2 google.com
+      ping -c 1 -w 2 semaphoreui.com
     fi
   register: ping_result
 
